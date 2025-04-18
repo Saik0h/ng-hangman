@@ -1,15 +1,14 @@
 <div [className]="'container'">
 
     <h1>{{title()}}</h1>
-    <p>Can you guess the word?</p>
-    <p>Try to guess the word in 6 tries.</p>
+    <p>Adivinhe a palavra em 6 tentativas</p>
 
     <div [className]="'game-info'">
         <span>
-            <p>Wrong guesses: {{wrongGuesses().length - 1}} / 6</p>
+            <p>Erros: {{wrongGuesses().length - 1}} / 6</p>
         </span>
         <span>
-            <p>hint: {{currentWord().hint}}</p>
+            <p>Dica: {{currentWord().hint}}</p>
         </span>
     </div>
     <div class="drawing">
@@ -17,12 +16,12 @@
         <div class="forca2"></div>
         <div class="forca3"></div>
         <div class="corda"></div>
-        <div class='head'></div>
-        <div class="body"></div>
-        <div class="left-arm"></div>
-        <div class="right-arm"></div>
-        <div class="left-leg"></div>
-        <div class="right-leg"></div>
+        <div [className]="wrongGuesses().length > 1 ? 'head': 'head hidden'"></div>
+        <div [className]="wrongGuesses().length > 2 ? 'body': 'body hidden'"></div>
+        <div [className]="wrongGuesses().length > 3 ? 'left-arm': 'left-arm hidden'"></div>
+        <div [className]="wrongGuesses().length > 4 ? 'right-arm': 'right-arm hidden'"></div>
+        <div [className]="wrongGuesses().length > 5 ? 'left-leg': 'left-leg hidden'"></div>
+        <div [className]="wrongGuesses().length > 6 ? 'right-leg': 'right-leg hidden'"></div>
 
     </div>
     <div [className]="'word'">
@@ -42,6 +41,9 @@
             (click)="includeLetters(i)">{{i}}</button>
         }
     </div>
-    <button [className]="'reset'" (click)="resetGame()">Reset Game</button>
+    <button [className]="'reset'" (click)="resetGame()">Recomeçar</button>
+
 </div>
+<app-game-over [tryAgain]="resetGame" [className]="isGameOver() ? 'game-over' : 'game-ongoing' "></app-game-over>
+<app-you-win [playAgain]="resetGame" [className]="isGameWon() ? 'game-won' : 'game-ongoing' "></app-you-win>
 <router-outlet />
