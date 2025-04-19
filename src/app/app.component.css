@@ -187,3 +187,14 @@
 .game-ongoing {
   display: none;
 }
+
+@media (max-width: 500px) {
+  .keyboard {
+    grid-template-columns: repeat(10, 1fr);
+    font-size: 0.7rem;
+  }
+  .word {
+    font-size: 1.5rem;
+  }
+
+}
