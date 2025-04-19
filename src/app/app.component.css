@@ -5,6 +5,8 @@
   align-items: center;
   margin-inline: auto;
   font-weight: bold;
+  width: fit-content;
+  padding-inline: 2rem;
 }
 
 .word {
@@ -13,6 +15,8 @@
   font-size: 2rem;
   text-align: center;
   margin: 1rem auto;
+  width: fit-content;
+  padding-inline: 2rem;
   span {
     padding-inline: 0.1em;
   }
@@ -29,6 +33,7 @@
   background-color: #f0f0f0;
   border-radius: 0.6rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: clamp(100%, fit-content, 100vw);
 
   button {
     padding: 0.5em;
@@ -69,12 +74,13 @@
   color: #000;
   width: fit-content;
   padding: 0.5em 1em;
-  margin-inline: auto;
   border-radius: 0.5em;
   text-transform: uppercase;
   font-weight: bold;
   font-size: 1rem;
-  text-align: center;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-inline: auto;
+  display: block;
   &&:hover {
     background-color: #d0d0d0;
   }
@@ -84,7 +90,6 @@
   margin-block: 1rem;
   position: relative;
   margin-inline: auto;
-  border: 1px solid #f0f0f0;
   width: 30rem;
   height: 13rem;
   .forca1 {
@@ -184,40 +189,6 @@
   }
 }
 
-.game-over{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  background-color: rgba(18, 3, 3, 0.5);
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  
-}
-
-
-.game-won{
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(63, 213, 63, 0.352);
-  color: #fff;
-  font-size: 2rem;
-  font-weight: bold;
-  text-align: center;
-}
-
-.game-ongoing{
+.game-ongoing {
   display: none;
 }

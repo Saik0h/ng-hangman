@@ -1,49 +1,79 @@
-<div [className]="'container'">
 
-    <h1>{{title()}}</h1>
-    <p>Adivinhe a palavra em 6 tentativas</p>
 
-    <div [className]="'game-info'">
-        <span>
-            <p>Erros: {{wrongGuesses().length - 1}} / 6</p>
-        </span>
-        <span>
-            <p>Dica: {{currentWord().hint}}</p>
-        </span>
-    </div>
-    <div class="drawing">
-        <div class="forca1"></div>
-        <div class="forca2"></div>
-        <div class="forca3"></div>
-        <div class="corda"></div>
-        <div [className]="wrongGuesses().length > 1 ? 'head': 'head hidden'"></div>
-        <div [className]="wrongGuesses().length > 2 ? 'body': 'body hidden'"></div>
-        <div [className]="wrongGuesses().length > 3 ? 'left-arm': 'left-arm hidden'"></div>
-        <div [className]="wrongGuesses().length > 4 ? 'right-arm': 'right-arm hidden'"></div>
-        <div [className]="wrongGuesses().length > 5 ? 'left-leg': 'left-leg hidden'"></div>
-        <div [className]="wrongGuesses().length > 6 ? 'right-leg': 'right-leg hidden'"></div>
-
-    </div>
-    <div [className]="'word'">
-        <span *ngFor="let i of lettersArray()"
-            [className]="guessedLetters().includes(i) ? 'guessed' : 'not-guessed'">{{guessedLetters().includes(i) ? i :
-            '_'}}</span>
-
-    </div>
-
-    <div [className]="!isGameOver() ? 'keyboard active' : 'keyboard inactive'"
-        [className]="!isGameWon() ? 'keyboard active' : 'keyboard inactive'">
-
-        @for(i of letters(); track i) {
-        <button
-            [className]="guessedLetters().includes(i) && wrongGuesses().includes(i) ? 'guessed wrong' : 'not-guessed'"
-            [className]="guessedLetters().includes(i) && correctGuesses().includes(i) ? 'guessed right' : 'not-guessed'"
-            (click)="includeLetters(i)">{{i}}</button>
-        }
-    </div>
-    <button [className]="'reset'" (click)="resetGame()">Recomeçar</button>
-
+<div [className]="'game-info'">
+    <span>
+        <h1>{{ title() }}</h1>
+        <p>{{ subtitle() }}</p>
+    </span>
+  <span>
+    <p>Erros: {{ wrongGuesses().length - 1 }} / 6</p>
+  </span>
+  <span>
+    <p>Dica: {{ currentWord().hint }}</p>
+  </span>
 </div>
-<app-game-over [tryAgain]="resetGame" [className]="isGameOver() ? 'game-over' : 'game-ongoing' "></app-game-over>
-<app-you-win [playAgain]="resetGame" [className]="isGameWon() ? 'game-won' : 'game-ongoing' "></app-you-win>
+
+<div class="drawing">
+  <div class="forca1"></div>
+  <div class="forca2"></div>
+  <div class="forca3"></div>
+  <div class="corda"></div>
+  <div [className]="wrongGuesses().length > 1 ? 'head' : 'head hidden'"></div>
+  <div [className]="wrongGuesses().length > 2 ? 'body' : 'body hidden'"></div>
+  <div
+    [className]="wrongGuesses().length > 3 ? 'left-arm' : 'left-arm hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length > 4 ? 'right-arm' : 'right-arm hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length > 5 ? 'left-leg' : 'left-leg hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length > 6 ? 'right-leg' : 'right-leg hidden'"
+  ></div>
+</div>
+
+
+<div [className]="'word'">
+  <span
+    *ngFor="let i of lettersArray()"
+    [className]="guessedLetters().includes(i) ? 'guessed' : 'not-guessed'"
+    >{{ correctGuesses().includes(lNormalizer(i)) ? i : "_" }}</span
+  >
+</div>
+
+<div
+  [className]="!isGameOver() ? 'keyboard active' : 'keyboard inactive'"
+  [className]="!isGameWon() ? 'keyboard active' : 'keyboard inactive'"
+>
+  @for(i of letters(); track i) {
+  <button
+    [className]="
+      guessedLetters().includes(i) && wrongGuesses().includes(i)
+        ? 'guessed wrong'
+        : 'not-guessed'
+    "
+    [className]="
+      guessedLetters().includes(i) && correctGuesses().includes(i)
+        ? 'guessed right'
+        : 'not-guessed'
+    "
+    (click)="includeLetters(i)"
+  >
+    {{ i }}
+  </button>
+  }
+</div>
+
+<button [className]="'reset'" (click)="resetGame()">Recomeçar</button>
+
+<app-game-over
+  [tryAgain]="resetGame"
+  [className]="isGameOver() ? 'game-over' : 'game-ongoing'"
+></app-game-over>
+<app-you-win
+  [playAgain]="resetGame"
+  [className]="isGameWon() ? 'game-won' : 'game-ongoing'"
+></app-you-win>
 <router-outlet />
