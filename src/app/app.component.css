@@ -188,6 +188,90 @@
 }
 
 @media (max-width: 500px) {
+  .game-info {
+    width: 90vw;
+    padding-block: 0.5em;
+    margin-inline: auto;
+    font-weight: bold;
+    h1{
+      font-size: 1.2rem;
+    }
+    p{
+      font-size: 0.8rem;
+      line-height: 1.1rem;
+    }
+    text-align: center;
+  }
+
+  .drawing{
+    height: 8rem;
+    width: 200px;
+    margin-inline-start: calc(50vw - 50px);
+    .forca1 {
+      top: 0.5rem;
+      right: 7rem;
+      width: 8px;
+      height: 100px;
+    }
+
+    .forca2 {
+      top: 0.5rem;
+      right: 7rem;
+      width: 50px;
+      height: 8px;
+    }
+    .forca3 {
+      top: 6.5rem;
+      right: 5.65rem;
+      width: 50px;
+      height: 8px;
+    }
+    
+    .corda {
+      top: 0.5rem;
+      right: 10.1rem;
+      width: 8px;
+      height: 15px;
+    }
+    .head {
+      top: 1.4rem;
+      right: 9.55rem;
+      width: 25px;
+      height: 25px;
+    }
+    
+    .body {
+      top: 2.9rem;
+      right: 10.1rem;
+      width: 8px;
+      height: 30px;
+    }
+    .left-arm {
+      top: 3rem;
+      right: 10.72rem;
+      width: 8px;
+      height: 25px;
+    }
+    
+    .right-arm {
+      top: 3rem;
+      right: 9.5rem;
+      width: 8px;
+      height: 25px;
+    }
+    .left-leg {
+      top: 4.35rem;
+      right: 10.72rem;
+      width: 8px;
+      height: 25px;
+    }
+    .right-leg {
+      top: 4.35rem;
+      right: 9.5rem;
+      width: 8px;
+      height: 25px;}
+  }
+
   .keyboard {
     display: grid;
     gap: 0.1em;
@@ -202,5 +286,9 @@
   }
   .word {
     font-size: 1.5rem;
+  }
+  .reset {
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
   }
 }
