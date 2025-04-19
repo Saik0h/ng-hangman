@@ -191,9 +191,10 @@
   .keyboard {
     display: grid;
     gap: 0.1em;
-    max-width: fit-content;
+    width: 90vw;
     padding-block: 0.5em;
     justify-self: center;
+    aspect-ratio: 3/1;
     button {
       font-size: 0.7rem;
       padding: 0.5em;
