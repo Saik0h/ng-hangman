@@ -5,8 +5,7 @@
   align-items: center;
   margin-inline: auto;
   font-weight: bold;
-  width: fit-content;
-  padding-inline: 2rem;
+  
 }
 
 .word {
@@ -27,18 +26,16 @@
   grid-template-columns: repeat(10, 1fr);
   text-align: center;
   gap: 0.25em;
-  margin-inline: auto;
   margin-bottom: 1em;
   padding: 1em;
   background-color: #f0f0f0;
   border-radius: 0.6rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  width: clamp(100%, fit-content, 100vw);
 
   button {
     padding: 0.5em;
     background-color: #e0e0e0;
-    border-radius: 4px;
+    border-radius: 0.25rem;
     text-align: center;
     font-size: 1.5em;
     cursor: pointer;
@@ -89,8 +86,6 @@
 .drawing {
   margin-block: 1rem;
   position: relative;
-  margin-inline: auto;
-  width: 30rem;
   height: 13rem;
   .forca1 {
     position: absolute;
