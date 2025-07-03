@@ -1,0 +1,55 @@
+.game-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-inline: auto;
+  font-weight: bold;
+}
+
+
+
+.reset {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #000;
+  width: fit-content;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  margin-inline: auto;
+  display: block;
+  margin-block-end: 0.5em;
+  &&:hover {
+    background-color: #d0d0d0;
+  }
+}
+
+.game-ongoing {
+  display: none;
+}
+
+@media (max-width: 500px) {
+  .game-info {
+    width: 90vw;
+    padding-block: 0.5em;
+    margin-inline: auto;
+    font-weight: bold;
+    h1{
+      font-size: 1.2rem;
+    }
+    p{
+      font-size: 0.8rem;
+      line-height: 1.1rem;
+    }
+    text-align: center;
+  }
+  
+  .reset {
+    font-size: 0.75rem;
+    padding: 0.5em 1em;
+  }
+}

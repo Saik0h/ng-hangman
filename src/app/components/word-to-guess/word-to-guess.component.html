@@ -1,0 +1,7 @@
+<div [className]="'word'">
+  @for(i of wordToGuess(); track $index){
+  <span [className]="guessedLetters().includes(i) ? 'guessed' : 'not-guessed'">
+    {{ isGuessed(i) ? i : "_" }}
+  </span>
+  }
+</div>

@@ -1,0 +1,19 @@
+.word {
+  display: flex;
+  color: #ffffff;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 2rem;
+  text-align: center;
+  margin: 1rem auto;
+  width: fit-content;
+  padding-inline: 2rem;
+  span {
+    padding-inline: 0.1em;
+  }
+}
+
+@media (max-width: 500px) {
+  .word {
+    font-size: 1.5rem;
+  }
+}

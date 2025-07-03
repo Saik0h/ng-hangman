@@ -1,0 +1,22 @@
+<div
+  [className]="!isGameOver() ? 'keyboard active' : 'keyboard inactive'"
+  [className]="!isGameWon() ? 'keyboard active' : 'keyboard inactive'"
+>
+  @for(i of letters(); track i) {
+  <button
+    [className]="
+      guessedLetters().includes(i) && wrongGuesses().includes(i)
+        ? 'guessed wrong'
+        : 'not-guessed'
+    "
+    [className]="
+      guessedLetters().includes(i) && correctGuesses().includes(i)
+        ? 'guessed right'
+        : 'not-guessed'
+    "
+    (click)="includeLetters(i)"
+  >
+    {{ i }}
+  </button>
+  }
+</div>

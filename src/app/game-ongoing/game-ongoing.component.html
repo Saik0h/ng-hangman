@@ -1,0 +1,27 @@
+<div [className]="'game-info'">
+  <span>
+    <h1>{{ title() }}</h1>
+    <p>{{ subtitle() }}</p>
+  </span>
+  <span>
+    <p>Erros: {{ wrongGuesses().length }} / 6</p>
+  </span>
+  <span>
+    <p>Dica: {{ currentWord().hint }}</p>
+  </span>
+</div>
+
+<app-hangman-display [wrongGuesses]="wrongGuesses" />
+
+<app-word-to-guess/>
+
+<button class="reset" (click)="resetGame()">Recomeçar</button>
+
+<app-keyboard
+  [isGameWon]="isGameWon"
+  [isGameOver]="isGameOver"
+  [guessedLetters]="guessedLetters"
+  [correctGuesses]="correctGuesses"
+  [wrongGuesses]="wrongGuesses"
+  [includeFunction]="includeLetters"
+/>

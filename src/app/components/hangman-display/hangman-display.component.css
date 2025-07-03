@@ -1,0 +1,171 @@
+.drawing {
+  margin-block: 1rem;
+  position: relative;
+  height: 13rem;
+  .forca1 {
+    position: absolute;
+    top: 0.8rem;
+    right: 11rem;
+    width: 10px;
+    height: 150px;
+    background-color: #f0f0f0;
+  }
+  .forca2 {
+    position: absolute;
+    top: 0.8rem;
+    right: 11rem;
+    width: 75px;
+    height: 10px;
+    background-color: #f0f0f0;
+  }
+  .forca3 {
+    position: absolute;
+    top: 10.1rem;
+    right: 9rem;
+    width: 75px;
+    height: 10px;
+    background-color: #f0f0f0;
+  }
+  .corda {
+    position: absolute;
+    top: 0.8rem;
+    right: 15.1rem;
+    width: 10px;
+    height: 20px;
+    background-color: #f0f0f0;
+  }
+
+  .head {
+    position: absolute;
+    top: 1.8rem;
+    right: 14.2rem;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    transition: all 0.3s ease-in;
+    background-color: #f0f0f0;
+  }
+  .body {
+    position: absolute;
+    top: 4.25rem;
+    right: 15.1rem;
+    width: 10px;
+    height: 50px;
+    transition: all 0.3s ease-in;
+    background-color: #f0f0f0;
+  }
+  .left-arm {
+    position: absolute;
+    top: 4.35rem;
+    right: 16.1rem;
+    width: 10px;
+    height: 40px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in;
+    transform: rotate(45deg);
+  }
+  .right-arm {
+    position: absolute;
+    top: 4.35rem;
+    right: 14.1rem;
+    width: 10px;
+    height: 40px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in;
+    transform: rotate(-45deg);
+  }
+  .left-leg {
+    position: absolute;
+    top: 6.8rem;
+    right: 16.1rem;
+    width: 10px;
+    height: 40px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in;
+    transform: rotate(45deg);
+  }
+  .right-leg {
+    position: absolute;
+    top: 6.8rem;
+    right: 14.1rem;
+    width: 10px;
+    height: 40px;
+    background-color: #f0f0f0;
+    transition: all 0.3s ease-in;
+    transform: rotate(-45deg);
+  }
+  .hidden {
+    visibility: hidden;
+  }
+}
+
+@media (max-width: 500px) {
+     .drawing{
+    height: 8rem;
+    width: 200px;
+    margin-inline-start: calc(50vw - 50px);
+    .forca1 {
+      top: 0.5rem;
+      right: 7rem;
+      width: 8px;
+      height: 100px;
+    }
+
+    .forca2 {
+      top: 0.5rem;
+      right: 7rem;
+      width: 50px;
+      height: 8px;
+    }
+    .forca3 {
+      top: 6.5rem;
+      right: 5.65rem;
+      width: 50px;
+      height: 8px;
+    }
+    
+    .corda {
+      top: 0.5rem;
+      right: 10.1rem;
+      width: 8px;
+      height: 15px;
+    }
+    .head {
+      top: 1.4rem;
+      right: 9.55rem;
+      width: 25px;
+      height: 25px;
+    }
+    
+    .body {
+      top: 2.9rem;
+      right: 10.1rem;
+      width: 8px;
+      height: 30px;
+    }
+    .left-arm {
+      top: 3rem;
+      right: 10.72rem;
+      width: 8px;
+      height: 25px;
+    }
+    
+    .right-arm {
+      top: 3rem;
+      right: 9.5rem;
+      width: 8px;
+      height: 25px;
+    }
+    .left-leg {
+      top: 4.35rem;
+      right: 10.72rem;
+      width: 8px;
+      height: 25px;
+    }
+    .right-leg {
+      top: 4.35rem;
+      right: 9.5rem;
+      width: 8px;
+      height: 25px;}
+  }
+}

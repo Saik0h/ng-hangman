@@ -1,0 +1,20 @@
+<div class="drawing">
+  <div class="forca1"></div>
+  <div class="forca2"></div>
+  <div class="forca3"></div>
+  <div class="corda"></div>
+  <div [className]="wrongGuesses().length >= 1 ? 'head' : 'head hidden'"></div>
+  <div [className]="wrongGuesses().length >= 2 ? 'body' : 'body hidden'"></div>
+  <div
+    [className]="wrongGuesses().length >= 3 ? 'left-arm' : 'left-arm hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length >= 4 ? 'right-arm' : 'right-arm hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length >= 5 ? 'left-leg' : 'left-leg hidden'"
+  ></div>
+  <div
+    [className]="wrongGuesses().length >= 6 ? 'right-leg' : 'right-leg hidden'"
+  ></div>
+</div>
